@@ -15,6 +15,11 @@ const users = {};
 users[process.env.BASIC_AUTH_USERNAME || 'Norbie101'] = process.env.BASIC_AUTH_PASSWORD || 'Uhunoma@80';
 
 app.use(express.json());
+app.use(basicAuth({
+  users,
+  challenge: true,
+  realm: 'DeepAgent MCP Endpoint',
+}));
 
 // Status endpoint
 app.get('/status', (req, res) => {
