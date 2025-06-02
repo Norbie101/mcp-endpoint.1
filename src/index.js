@@ -1,5 +1,6 @@
 
 const express = require('express');
+const basicAuth = require('express-basic-auth');
 const fs = require('fs').promises;
 const path = require('path');
 const { exec } = require('child_process');
